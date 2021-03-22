@@ -1,18 +1,9 @@
-import { ApolloServer, gql } from 'apollo-server';
-import { MONGODB } from './config.js';
+import { ApolloServer } from 'apollo-server';
 import mongoose from 'mongoose';
 
-const typeDefs = gql`
-  type Query {
-    helloWorld: String!
-  }
-`;
-
-const resolvers = {
-  Query: {
-    helloWorld: () => 'Hello World!',
-  },
-};
+import { MONGODB } from './config.js';
+import { typeDefs } from '../server/graphQL/typeDefs.js';
+import { resolvers } from '../server/graphQL/resolvers/index.js';
 
 const server = new ApolloServer({
   typeDefs,

@@ -1,0 +1,9 @@
+# Extra Files and self
+.DS_Store
+
+# Server
+server/node_modules
+server/config.js
+
+# Client
+client/node_modules
